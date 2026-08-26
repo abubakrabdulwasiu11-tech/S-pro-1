@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skye-View College | Contact</title>
+    <link rel="icon"          type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon"               href="images/logo.png">
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <marquee>
+            📢 Admissions in Progress 2026/2027 • Welcome to Skye-View College • Excellence Through Knowledge
+        </marquee>
+    </div>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Skye-View College">
+            </a>
+        </div>
+        <div>
+            <h1 class="Logoh1">Skye-View College</h1>
+        </div>
+    
+        <nav class="navbar">
+    
+            <ul class="nav-links">
+    
+                <li><a href="index.html">HOME</a></li>
+    
+                <li class="dropdown">
+                    <a href="#">
+                        ABOUT
+                    <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+    
+                    <ul class="dropdown-menu">
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="mv.html">Mission & Vision</a></li>
+                        <li><a href="management.html">Management</a></li>
+                    </ul>
+    
+                </li>
+    
+                <li><a href="admission.html">ADMISSIONS</a></li>
+    
+                <li><a href="academics.html">ACADEMICS</a></li>
+    
+                <li><a href="gallery.html">GALLERY</a></li>
+    
+                <li><a href="contact.html">CONTACTS</a></li>
+    
+            </ul>
+            
+    
+        </nav>
+    
+            <a href="admission.html" class="apply-btn">APPLY NOW</a>
+    
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+    </header>
+<!-- =========================
+     CONTAC
+T US SECTION
+========================= -->
+
+<section class="contact-page">
+
+    <!-- Hero -->
+    <div class="contact-hero">
+        <div class="contact-hero-content">
+            <p class="breadcrumb">HOME <span>›</span> CONTACT US</p>
+            <h1>We Would Love to Hear From You</h1>
+            <p>
+                Have questions about Skye-View College? Whether you're
+                interested in admission, academics, or general enquiries,
+                we're here to help.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Get In Touch -->
+    <section class="get-touch">
+        <div class="section-heading">
+            <span>GET IN TOUCH</span>
+            <h2>We're Here to Help</h2>
+            <p>
+                Reach out to Skye-View College and our team will be happy
+                to assist you with your enquiries.
+            </p>
+        </div>
+
+        <div class="contact-info-grid">
+
+            <div class="contact-card">
+                <div class="contact-icon">☎</div>
+                <h3>Call Us</h3>
+                <p>0705 577 2744</p>
+                <a href="tel:07055772744">Call Now</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">✉</div>
+                <h3>Email Us</h3>
+                <p>skye-view2016@gmail.com</p>
+                <a href="mailto:skye-view2016@gmail.com">Send Email</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">◷</div>
+                <h3>Office Hours</h3>
+                <p>Monday – Friday</p>
+                <span>8:00 AM – 4:00 PM</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Message + Map -->
+    <section class="contact-main">
+
+        <!-- Form -->
+        <div class="message-box">
+            <span class="small-title">SEND US A MESSAGE</span>
+            <h2>How Can We Help?</h2>
+
+            <form id="contactForm">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email address"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Your phone number"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="What is your enquiry about?"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">
+                    Send Message <span>→</span>
+                </button>
+
+                <p id="formMessage"></p>
+
+            </form>
+        </div>
+
+
+        <!-- Map -->
+        <div class="map-box">
+            <span class="small-title">FIND US</span>
+            <h2>Visit Skye-View College</h2>
+
+            <p>
+                13/15 Adeokun Street, Off Oworo Road,
+                Oworoshoki, Lagos.
+            </p>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps?q=13%2F15%20Adeokun%20Street%2C%20Off%20Oworo%20Road%2C%20Oworoshoki%2C%20Lagos&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=13%2F15%20Adeokun%20Street%2C%20Off%20Oworo%20Road%2C%20Oworoshoki%2C%20Lagos"
+                target="_blank"
+                class="directions-btn">
+                Get Directions →
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- Enquiry Cards -->
+    <section class="enquiries">
+
+        <div class="section-heading">
+            <span>HOW CAN WE HELP?</span>
+            <h2>We're Here for You</h2>
+        </div>
+
+        <div class="enquiry-grid">
+
+            <div class="enquiry-card">
+                <div class="enquiry-number">01</div>
+                <h3>Admissions Enquiries</h3>
+                <p>
+                    Get information about admission requirements,
+                    applications and enrolment at Skye-View College.
+                </p>
+                <a href="tel:07055772744">Learn More →</a>
+            </div>
+
+            <div class="enquiry-card">
+                <div class="enquiry-number">02</div>
+                <h3>Academic Information</h3>
+                <p>
+                    Ask about our academic programmes, curriculum,
+                    subjects and learning opportunities.
+                </p>
+                <a href="mailto:skye-view2016@gmail.com">Learn More →</a>
+            </div>
+
+            <div class="enquiry-card">
+                <div class="enquiry-number">03</div>
+                <h3>General Enquiries</h3>
+                <p>
+                    Have a question about Skye-View College?
+                    Our team is ready to assist you.
+                </p>
+                <a href="mailto:skye-view2016@gmail.com">Learn More →</a>
+            </div>
+
+            <div class="enquiry-card">
+                <div class="enquiry-number">04</div>
+                <h3>Parent Support</h3>
+                <p>
+                    Parents and guardians can contact us for
+                    assistance and school-related information.
+                </p>
+                <a href="https://wa.me/2347055772744" target="_blank">
+                    Chat on WhatsApp →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="contact-cta">
+
+        <div class="cta-content">
+            <span>NEED ASSISTANCE?</span>
+
+            <h2>Have a Question?<br>We're Here to Help.</h2>
+
+            <p>
+                Contact Skye-View College today.
+                We will be glad to assist you.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="tel:07055772744" class="cta-primary">
+                    Call Us
+                </a>
+
+                <a
+                    href="https://wa.me/2347055772744"
+                    target="_blank"
+                    class="cta-secondary">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+</section>
+    <!-- ================= PAGE NAVIGATION ================= -->
+
+    <section class="page-navigation">
+
+        <a href="gallery.html">
+            <span>← PREVIOUS</span>
+            <strong>Gallery</strong>
+        </a>
+
+        <div class="nav-divider"></div>
+
+        <a href="index.html" class="next-page">
+            <span>NEXT →</span>
+            <strong>Home</strong>
+        </a>
+
+    </section>
+    <footer class="footer">
+
+        <div class="footer-container">
+    
+            <!-- About -->
+    
+            <div class="footer-box">
+    
+                <img src="images/logo.png" class="footer-logo">
+    
+                <h2>Skye-View College</h2>
+    
+                <span>...Building Future Leaders</span>
+    
+                <p>
+    
+                    Skye-View College is committed to nurturing students through
+                    academic excellence, strong moral values and innovative learning,
+                    preparing every child for success in higher education and life.
+    
+                </p>
+    
+                <div class="social-links">
+    
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+    
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+    
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    
+                </div>
+    
+            </div>
+    
+            <!-- Quick Links -->
+    
+            <div class="footer-box">
+    
+                <h3>Quick Links</h3>
+    
+                <ul>
+    
+                    <li><a href="history.html">About Us</a></li>
+    
+                    <li><a href="admission.html">Admissions</a></li>
+    
+                    <li><a href="academics.html">Academics</a></li>
+    
+                    <li><a href="gallery.html">Gallery</a></li>
+    
+                    <li><a href="contact.html">Contact</a></li>
+    
+    
+                </ul>
+    
+            </div>
+    
+            <!-- Contact -->
+    
+            <div class="footer-box">
+    
+                <h3>Contact Us</h3>
+    
+                <ul>
+    
+                    <li>
+                        <i class="fas fa-location-dot"></i>
+                        Oworoshoki, Lagos State, Nigeria
+                    </li>
+    
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        +234 705 577 2744
+                    </li>
+    
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        skye-view2016@gmail.com
+                    </li>
+    
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        www.portal.skyeviewschools.com.ng
+                    </li>
+    
+                </ul>
+    
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+    
+            <p>
+    
+                © 2026 Abubakr Abdulwasiu Olamide. All Rights Reserved.
+    
+            </p>
+    
+            <div>
+    
+                <a href="#">Privacy Policy</a>
+    
+                <a href="#">Terms of Use</a>
+    
+            </div>
+    
+        </div>
+    
+    </footer>
+    
+        <!-- ================= BACK TO TOP ================= -->
+    
+        <button id="backToTop" class="back-to-top">
+            ↑
+        </button>
+    
+    <script src="script.js"></script>
+    
+    </body>
+    
+    </html>
