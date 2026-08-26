@@ -4498,3 +4498,329 @@ img{
     color:#fff;
     transform:rotate(180deg);
 }
+/* =========================================
+   BOARD MEMBERS - RESPONSIVE FIX
+========================================= */
+
+.board-members{
+    padding:90px 0;
+    background:#fff;
+}
+
+.board-intro{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.board-intro p{
+    line-height:2;
+    color:#666;
+    font-size:17px;
+}
+
+.board-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    width:100%;
+}
+
+.board-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.45s;
+    position:relative;
+    width:100%;
+}
+
+.board-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+}
+
+.board-image{
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+    background:#f0f0f0;
+}
+
+.board-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 20%;
+    transition:.7s;
+    display:block;
+}
+
+.board-card:hover img{
+    transform:scale(1.05);
+}
+
+.board-overlay{
+    position:absolute;
+    left:15px;
+    right:15px;
+    bottom:72px;
+    background:#1a5276;
+    color:#fff;
+    padding:12px 16px;
+    border-radius:8px;
+    transition:.4s;
+    z-index:2;
+}
+
+.board-overlay h3{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.board-overlay span{
+    font-size:13px;
+    color:#d8d8d8;
+}
+
+.board-info{
+    padding:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.board-info h4{
+    font-size:18px;
+    margin-bottom:5px;
+    color:#1a3742;
+}
+
+.board-info p{
+    font-size:14px;
+    color:#777;
+}
+
+.board-info a{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#e8f0f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#1a5276;
+    font-size:22px;
+    transition:.3s;
+}
+
+.board-info a:hover{
+    background:#1a5276;
+    color:#fff;
+    transform:rotate(180deg);
+}
+
+/* =========================================
+   BOARD MEMBERS - MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:1200px){
+    .board-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+    
+    .board-image{
+        height:280px;
+    }
+}
+
+@media(max-width:991px){
+    .board-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+    
+    .board-image{
+        height:260px;
+    }
+    
+    .board-card{
+        max-width:100%;
+    }
+}
+
+@media(max-width:768px){
+    .board-members{
+        padding:60px 20px;
+    }
+    
+    .board-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+        width:100%;
+        max-width:400px;
+        margin:0 auto;
+    }
+    
+    .board-card{
+        width:100%;
+        margin-bottom:0;
+    }
+    
+    .board-image{
+        height:300px;
+        width:100%;
+    }
+    
+    .board-image img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center top;
+    }
+    
+    .board-overlay{
+        bottom:72px;
+        left:12px;
+        right:12px;
+    }
+    
+    .board-overlay h3{
+        font-size:16px;
+    }
+    
+    .board-overlay span{
+        font-size:12px;
+    }
+    
+    .board-info{
+        padding:18px 20px;
+    }
+    
+    .board-info h4{
+        font-size:16px;
+    }
+    
+    .board-info p{
+        font-size:13px;
+    }
+}
+
+@media(max-width:576px){
+    .board-members{
+        padding:50px 15px;
+    }
+    
+    .board-grid{
+        gap:25px;
+        max-width:350px;
+    }
+    
+    .board-image{
+        height:280px;
+    }
+    
+    .board-card{
+        border-radius:10px;
+    }
+    
+    .board-overlay{
+        bottom:68px;
+        padding:10px 14px;
+    }
+    
+    .board-overlay h3{
+        font-size:15px;
+    }
+    
+    .board-overlay span{
+        font-size:11px;
+    }
+    
+    .board-info{
+        padding:15px 18px;
+    }
+    
+    .board-info h4{
+        font-size:15px;
+    }
+    
+    .board-info p{
+        font-size:12px;
+    }
+    
+    .board-info a{
+        width:32px;
+        height:32px;
+        font-size:18px;
+    }
+}
+
+/* =========================================
+   ALTERNATIVE: CIRCULAR AVATARS ON MOBILE
+========================================= */
+
+@media(max-width:576px){
+    /* Optional: Use circular avatars for a cleaner mobile look */
+    .board-image{
+        height:200px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#f0f4f8;
+        padding-top:20px;
+    }
+    
+    .board-image img{
+        width:140px;
+        height:140px;
+        border-radius:50%;
+        object-fit:cover;
+        object-position:center top;
+        border:3px solid #1a5276;
+        box-shadow:0 5px 15px rgba(0,0,0,.15);
+    }
+    
+    .board-overlay{
+        position:static;
+        background:transparent;
+        color:#1a3742;
+        text-align:center;
+        padding:10px 15px 5px;
+        box-shadow:none;
+    }
+    
+    .board-overlay h3{
+        color:#1a3742;
+        font-size:16px;
+    }
+    
+    .board-overlay span{
+        color:#667;
+        font-size:12px;
+    }
+    
+    .board-info{
+        justify-content:center;
+        padding:5px 15px 20px;
+        text-align:center;
+    }
+    
+    .board-info h4{
+        display:none;
+    }
+    
+    .board-info p{
+        color:#777;
+        font-size:13px;
+    }
+    
+    .board-info a{
+        display:none;
+    }
+}
