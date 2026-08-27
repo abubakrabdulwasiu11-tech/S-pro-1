@@ -69,64 +69,103 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(nextSlide, 5000);
     }
 
-    /*=====================================
-      MOBILE MENU
-    =====================================*/
+/* =====================================
+   MOBILE MENU - FIXED
+===================================== */
 
-    const menu = document.querySelector(".mobile-menu");
-    const overlay = document.querySelector(".menu-overlay");
-    const openMenu = document.querySelector(".menu-toggle");
-    const closeMenu = document.querySelector(".close-menu");
+const menu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".menu-overlay");
+const openMenu = document.querySelector(".menu-toggle");
+const closeMenuBtn = document.querySelector(".close-menu");
 
-    function openSidebar() {
+function openSidebar() {
+    if(menu) menu.classList.add("active");
+    if(overlay) overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
 
-        if(menu) menu.classList.add("active");
+function closeSidebar() {
+    if(menu) menu.classList.remove("active");
+    if(overlay) overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
 
-        if(overlay) overlay.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeSidebar() {
-
-        if(menu) menu.classList.remove("active");
-
-        if(overlay) overlay.classList.remove("active");
-
-        document.body.style.overflow = "";
-    }
-
-    if(openMenu){
-        openMenu.addEventListener("click", openSidebar);
-    }
-
-    if(closeMenu){
-        closeMenu.addEventListener("click", closeSidebar);
-    }
-
-    if(overlay){
-        overlay.addEventListener("click", closeSidebar);
-    }
-
-    /*=====================================
-      MOBILE DROPDOWNS
-    =====================================*/
-
-    const dropdownButtons =
-        document.querySelectorAll(".dropdown-btn");
-
-    dropdownButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const parent = button.parentElement;
-
-            parent.classList.toggle("active");
-
-        });
-
+// Open menu
+if(openMenu){
+    openMenu.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openSidebar();
     });
+}
 
+// Close menu
+if(closeMenuBtn){
+    closeMenuBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeSidebar();
+    });
+}
+
+// Close on overlay click
+if(overlay){
+    overlay.addEventListener("click", function(e) {
+        e.stopPropagation();
+        closeSidebar();
+    });
+}
+
+// Close on Escape key
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        closeSidebar();
+    }
+});
+
+// Close when clicking a menu link (for navigation)
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
+mobileLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+        // Only close if it's not a dropdown toggle
+        if(!this.classList.contains("dropdown-btn") && !this.closest(".dropdown-content") || this.closest(".dropdown-content")) {
+            closeSidebar();
+        }
+    });
+});
+
+// Close when clicking the apply button
+const mobileApplyBtn = document.querySelector(".mobile-apply-btn");
+if(mobileApplyBtn){
+    mobileApplyBtn.addEventListener("click", function() {
+        closeSidebar();
+    });
+}
+
+/* =====================================
+   MOBILE DROPDOWNS
+===================================== */
+
+const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+
+dropdownButtons.forEach(button => {
+    button.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const parent = this.parentElement;
+        
+        // Close other dropdowns
+        dropdownButtons.forEach(otherBtn => {
+            if(otherBtn !== this && otherBtn.parentElement.classList.contains("active")) {
+                otherBtn.parentElement.classList.remove("active");
+            }
+        });
+        
+        // Toggle this dropdown
+        parent.classList.toggle("active");
+    });
+});
     /*=====================================
       STICKY HEADER
     =====================================*/

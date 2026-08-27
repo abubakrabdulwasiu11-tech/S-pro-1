@@ -79,34 +79,47 @@
 
 
 
-    <!-- ================= MOBILE MENU ================= -->
+    <!-- =====================================
+   MOBILE MENU
+===================================== -->
 
-    <div class="mobile-menu" id="mobileMenu">
+<div class="menu-overlay"></div>
 
-        <div class="mobile-menu-header">
-
-            <a href="index.html" class="school-brand">
-                <img src="images/logo.png" alt="Skye-View College Logo">
-
-                <div class="brand-text">
-                    <h2>SKYE-VIEW</h2>
-                    <span>COLLEGE</span>
-                </div>
-            </a>
-
-            <button id="closeMenu">×</button>
-
-        </div>
-
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="academics.html">Academics</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contacts</a>
-
+<div class="mobile-menu">
+    <div class="mobile-header">
+        <img src="images/logo.png" alt="Skye-View College Logo">
+        <button class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
     </div>
 
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="dropdown-mobile">
+            <div class="dropdown-btn">
+                About
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <ul class="dropdown-content">
+                <li><a href="history.html">History</a></li>
+                <li><a href="mv.html">Mission & Vision</a></li>
+                <li><a href="management.html">Management</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+    </ul>
+
+    <a href="admission.html" class="mobile-apply-btn">APPLY NOW</a>
+
+    <div class="mobile-menu-footer">
+        <p>© 2026 Skye-View College</p>
+    </div>
+</div>
 
     <!-- ================= HERO SECTION ================= -->
 
