@@ -25,36 +25,49 @@ body::before{
     z-index:2000;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER - FIXED FOR MOBILE
+========================================= */
 
 .header{
     position:sticky;
     top:3px;
-    height:72px;
+    height:70px;
     background:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
     box-shadow:0 3px 15px rgba(0,0,0,.06);
     z-index:1000;
-    padding:0 50px;
+    padding:0 30px;
 }
 
-img{
-    height:52px;
+.logo{
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:55px;
+    width:auto;
+    display:block;
 }
 
 .Logoh1{
     font-size:20px;
     transition:all .45s ease;
     color:#1a5276;
+    margin:0;
+    padding:0;
+    white-space:nowrap;
 }
+
 .Logoh1:hover{
     color:#2980b9;
     cursor:pointer;
     transition:.3s;
     letter-spacing:.5px;
-    padding-right:20px;
 }
 
 /* NAVIGATION */
@@ -63,6 +76,7 @@ img{
     flex:1;
     display:flex;
     justify-content:center;
+    margin:0 20px;
 }
 
 .nav-links{
@@ -71,6 +85,7 @@ img{
     list-style:none;
     margin:0;
     padding:0;
+    align-items:center;
 }
 
 .nav-links li{
@@ -84,6 +99,8 @@ img{
     font-weight:700;
     letter-spacing:.5px;
     transition:.3s;
+    display:block;
+    padding:5px 0;
 }
 
 .nav-links a:hover{
@@ -94,7 +111,7 @@ img{
 
 .dropdown-menu{
     position:absolute;
-    top:45px;
+    top:40px;
     left:0;
     width:220px;
     background:#fff;
@@ -105,6 +122,7 @@ img{
     visibility:hidden;
     transform:translateY(15px);
     transition:.3s;
+    padding:0;
 }
 
 .dropdown:hover .dropdown-menu{
@@ -115,6 +133,7 @@ img{
 
 .dropdown-menu li{
     border-bottom:1px solid #eee;
+    margin:0;
 }
 
 .dropdown-menu li:last-child{
@@ -124,6 +143,8 @@ img{
 .dropdown-menu a{
     display:block;
     padding:14px 18px;
+    font-size:13px;
+    font-weight:600;
 }
 
 /* APPLY BUTTON */
@@ -136,8 +157,10 @@ img{
     border-radius:4px;
     font-size:13px;
     font-weight:700;
-    margin-left:25px;
+    margin-left:20px;
     transition:.3s;
+    white-space:nowrap;
+    flex-shrink:0;
 }
 
 .apply-btn:hover{
@@ -149,22 +172,99 @@ img{
 
 .menu-toggle{
     display:none;
-    font-size:28px;
+    font-size:24px;
     cursor:pointer;
     background:none;
     border:none;
     color:#1a5276;
     padding:5px;
     transition:.3s;
+    flex-shrink:0;
+    line-height:1;
 }
 
 .menu-toggle:hover{
     color:#2980b9;
-    transform:scale(1.1);
+}
+
+.menu-toggle i{
+    display:block;
+    font-size:24px;
 }
 
 /* =========================================
-   MOBILE MENU
+   HEADER - MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:991px){
+    .navbar,
+    .apply-btn{
+        display:none;
+    }
+    
+    .menu-toggle{
+        display:block;
+    }
+    
+    .header{
+        height:65px;
+        padding:0 15px;
+        gap:10px;
+    }
+    
+    .logo img{
+        height:45px;
+    }
+    
+    .Logoh1{
+        font-size:16px;
+        flex:1;
+        text-align:center;
+    }
+}
+
+@media(max-width:576px){
+    .header{
+        height:60px;
+        padding:0 12px;
+        gap:8px;
+    }
+    
+    .logo img{
+        height:40px;
+    }
+    
+    .Logoh1{
+        font-size:14px;
+    }
+    
+    .menu-toggle{
+        font-size:22px;
+        padding:4px;
+    }
+}
+
+@media(max-width:400px){
+    .header{
+        height:55px;
+        padding:0 10px;
+    }
+    
+    .logo img{
+        height:35px;
+    }
+    
+    .Logoh1{
+        font-size:13px;
+        letter-spacing:0;
+    }
+    
+    .menu-toggle{
+        font-size:20px;
+    }
+}
+/* =========================================
+   MOBILE MENU - CLEAN FIX
 ========================================= */
 
 .menu-overlay{
@@ -176,7 +276,7 @@ img{
     background:rgba(0,0,0,.5);
     opacity:0;
     visibility:hidden;
-    transition:.3s;
+    transition:all .3s ease;
     z-index:998;
 }
 
@@ -190,12 +290,14 @@ img{
     top:0;
     left:-100%;
     width:85%;
-    max-width:350px;
+    max-width:340px;
     height:100vh;
+    height:100dvh;
     background:#fff;
-    transition:left .4s ease;
+    transition:left .35s ease;
     z-index:999;
     overflow-y:auto;
+    overflow-x:hidden;
     box-shadow:5px 0 20px rgba(0,0,0,.15);
 }
 
@@ -203,125 +305,299 @@ img{
     left:0;
 }
 
+/* Mobile Menu Header - SIMPLE & CLEAN */
+.mobile-menu-header,
 .mobile-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 20px;
-    border-bottom:1px solid #eee;
+    padding:12px 15px;
     background:#1a5276;
     color:#fff;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.school-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.school-brand img{
+    height:35px;
+    width:auto;
+    border-radius:50%;
+    background:#fff;
+    padding:2px;
+}
+
+.brand-text h2{
+    font-size:14px;
+    margin:0;
+    color:#fff;
+    font-weight:700;
+    letter-spacing:.5px;
+    line-height:1.2;
+}
+
+.brand-text span{
+    font-size:10px;
+    color:rgba(255,255,255,.7);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    display:block;
+}
+
+.mobile-header{
+    padding:12px 15px;
 }
 
 .mobile-header img{
-    height:45px;
+    height:35px;
+    border-radius:50%;
     background:#fff;
-    border-radius:5px;
-    padding:5px;
+    padding:2px;
 }
 
-.mobile-header h2{
-    font-size:18px;
-    margin:0;
-    color:#fff;
-}
-
-.close-menu{
-    width:40px;
-    height:40px;
+/* Close Button */
+.close-menu,
+#closeMenu{
+    width:32px;
+    height:32px;
     border:none;
     border-radius:50%;
-    background:rgba(255,255,255,.2);
+    background:rgba(255,255,255,.15);
     color:#fff;
     cursor:pointer;
-    font-size:20px;
+    font-size:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-    transition:.3s;
+    transition:all .3s ease;
+    flex-shrink:0;
+    line-height:1;
 }
 
-.close-menu:hover{
+.close-menu:hover,
+#closeMenu:hover{
     background:rgba(255,255,255,.3);
     transform:rotate(90deg);
 }
 
+/* Mobile Menu Links - CLEAN */
 .mobile-menu ul{
     list-style:none;
     margin:0;
     padding:0;
 }
 
-.mobile-menu li{
-    border-bottom:1px solid #eee;
-}
-
-.mobile-menu a{
+.mobile-menu > a,
+.mobile-menu ul > li > a{
     display:block;
-    padding:18px 25px;
+    padding:14px 20px;
     text-decoration:none;
     color:#333;
     font-weight:600;
-    font-size:15px;
-    transition:.3s;
+    font-size:14px;
+    border-bottom:1px solid #f5f5f5;
+    transition:all .2s ease;
 }
 
-.mobile-menu a:hover{
-    background:#f0f4f8;
+.mobile-menu > a:hover,
+.mobile-menu ul > li > a:hover{
+    background:#f5f9fc;
     color:#1a5276;
-    padding-left:30px;
+    padding-left:25px;
+}
+
+/* Dropdown */
+.dropdown-mobile{
+    position:relative;
 }
 
 .dropdown-btn{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 25px;
+    padding:14px 20px;
     cursor:pointer;
     font-weight:600;
-    font-size:15px;
+    font-size:14px;
     color:#333;
-    transition:.3s;
+    border-bottom:1px solid #f5f5f5;
+    transition:all .2s ease;
+    user-select:none;
 }
 
 .dropdown-btn:hover{
-    background:#f0f4f8;
+    background:#f5f9fc;
     color:#1a5276;
+}
+
+.dropdown-btn i{
+    font-size:10px;
+    transition:transform .3s ease;
+}
+
+.dropdown-mobile.active .dropdown-btn i{
+    transform:rotate(180deg);
 }
 
 .dropdown-content{
     display:none;
     background:#f8f9fa;
-}
-
-.dropdown-content a{
-    padding-left:40px;
-    font-size:14px;
-    font-weight:500;
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 
 .dropdown-mobile.active .dropdown-content{
     display:block;
 }
 
+.dropdown-content li{
+    border-bottom:1px solid #f0f0f0;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px 20px 12px 35px;
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+    font-weight:500;
+    transition:all .2s ease;
+}
+
+.dropdown-content a:hover{
+    background:#e8f0f5;
+    color:#1a5276;
+    padding-left:40px;
+}
+
+/* Mobile Apply Button */
 .mobile-apply-btn{
     display:block;
-    margin:20px;
-    padding:15px;
+    margin:15px;
+    padding:12px;
     background:#1a5276;
     color:#fff !important;
     text-align:center;
     border-radius:5px;
     font-weight:700 !important;
-    transition:.3s;
+    font-size:13px !important;
+    text-decoration:none;
+    transition:all .3s ease;
+    border:none !important;
+    letter-spacing:1px;
 }
 
 .mobile-apply-btn:hover{
     background:#2980b9;
-    padding-left:15px !important;
+    transform:translateY(-2px);
+    box-shadow:0 4px 12px rgba(26,82,118,.3);
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer{
+    padding:12px 15px;
+    border-top:1px solid #f0f0f0;
+    text-align:center;
+    margin-top:auto;
+}
+
+.mobile-menu-footer p{
+    font-size:11px;
+    color:#999;
+    margin:0;
 }
 
 /* =========================================
+   MOBILE MENU - RESPONSIVE
+========================================= */
+
+@media(max-width:576px){
+    .mobile-menu{
+        width:88%;
+        max-width:320px;
+    }
+    
+    .mobile-menu-header,
+    .mobile-header{
+        padding:10px 12px;
+    }
+    
+    .school-brand img{
+        height:30px;
+    }
+    
+    .brand-text h2{
+        font-size:13px;
+    }
+    
+    .brand-text span{
+        font-size:9px;
+    }
+    
+    .close-menu,
+    #closeMenu{
+        width:28px;
+        height:28px;
+        font-size:14px;
+    }
+    
+    .mobile-menu > a,
+    .mobile-menu ul > li > a,
+    .dropdown-btn{
+        padding:12px 18px;
+        font-size:13px;
+    }
+    
+    .dropdown-content a{
+        padding:10px 18px 10px 30px;
+        font-size:12px;
+    }
+    
+    .mobile-apply-btn{
+        margin:12px;
+        padding:11px;
+        font-size:12px !important;
+    }
+    
+    .mobile-menu-footer p{
+        font-size:10px;
+    }
+}
+
+@media(max-width:400px){
+    .mobile-menu{
+        width:92%;
+        max-width:290px;
+    }
+    
+    .school-brand img{
+        height:28px;
+    }
+    
+    .brand-text h2{
+        font-size:12px;
+    }
+    
+    .mobile-menu > a,
+    .mobile-menu ul > li > a,
+    .dropdown-btn{
+        padding:11px 15px;
+        font-size:12px;
+    }
+    
+    .dropdown-content a{
+        padding:9px 15px 9px 25px;
+        font-size:11px;
+    }
+}/* =========================================
    HERO SLIDER
 ========================================= */
 
